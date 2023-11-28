@@ -8,7 +8,7 @@ export default function BottomContainer({ database, toggle }) {
 
   useEffect(() => {
     setStackArray(JSON.parse(localStorage.getItem("stackArray")))
-  },[])
+  })
 
   return (
     <div
