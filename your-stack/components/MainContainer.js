@@ -69,8 +69,8 @@ export default function MainContainer({ database, toggle }) {
               </div>
             </div>
             <div className="p-4">
-              <p className="font-bold">{item.nome}</p>
-              <p className=" font-light">{item.tipo}</p>
+              <p className="font-bold text-black">{item.nome}</p>
+              <p className="font-light text-black">{item.tipo}</p>
             </div>
             <div className="flex justify-end m-3">
               <div className="bg-primary rounded-full flex justify-center w-10 h-10 items-center">
@@ -118,8 +118,8 @@ export default function MainContainer({ database, toggle }) {
             </div>
           </div>
           <div className="bg-white rounded-b-2xl p-8 w-11/12">
-            <h1 className="font-bold text-3xl mb-4">{modalData.nome}</h1>
-            <p className="text-xs font-light">{modalData.descricao}</p>
+            <h1 className="font-bold text-3xl mb-4 text-black">{modalData.nome}</h1>
+            <p className="text-xs font-light text-black">{modalData.descricao}</p>
           </div>
         </div>
       ) : null}

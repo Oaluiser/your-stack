@@ -10,10 +10,7 @@ export default function MainModal({ toggle }) {
         alt="texture"
         className="absolute top-0 left-0 z-20 bg-black w-screen h-screen"
       />
-      <div
-        className="absolute w-screen h-screen left-0 top-0 z-20 flex flex-col justify-between cursor-pointer"
-        onClick={toggle}
-      >
+      <div className="absolute w-screen h-screen left-0 top-0 z-20 flex flex-col justify-between cursor-pointer">
         <div></div>
         <div className="flex justify-center items-center">
           <p className="text-7xl font-black text-white">
@@ -27,6 +24,7 @@ export default function MainModal({ toggle }) {
             height={40}
             alt="chevron"
             className="transition-all duration-300 delay-150 rotate-180"
+            onClick={toggle}
           />
         </div>
       </div>
