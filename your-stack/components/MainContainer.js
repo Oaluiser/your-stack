@@ -13,7 +13,9 @@ export default function MainContainer({ database, toggle }) {
 
   const handleAdd = (e) => {
     localStorage.setItem("toggle", "true")
+    document.querySelector(".toggleBottom").classList.remove("h-[5vh]")
     document.querySelector(".toggleBottom").classList.add("h-[15vh]")
+    document.querySelector(".toggleMain").classList.remove("h-[87vh]")
     document.querySelector(".toggleMain").classList.add("h-[77vh]")
     document.querySelector(".chevron").classList.add("rotate-180")
     if (localStorage.getItem(e.target.id) === "false") {

@@ -13,9 +13,7 @@ export default function Main() {
     if (localStorage.getItem("toggle") === null) {
       localStorage.setItem("toggle", "false")
     } else if (localStorage.getItem("toggle") === "true") {
-      document.querySelector(".toggleBottom").classList.remove("h-[5vh]")
       document.querySelector(".toggleBottom").classList.add("h-[15vh]")
-      document.querySelector(".toggleMain").classList.remove("h-[87vh]")
       document.querySelector(".toggleMain").classList.add("h-[77vh]")
       document.querySelector(".chevron").classList.add("rotate-180")
     }

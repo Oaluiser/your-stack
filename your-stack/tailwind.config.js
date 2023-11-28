@@ -11,6 +11,9 @@ module.exports = {
         primary: "#EB5E28",
         secondary: "#403D39",
       },
+      backgroundImage: {
+        bgTexture: "url('/background.png')",
+      },
     },
   },
   plugins: [],
