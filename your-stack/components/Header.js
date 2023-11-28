@@ -1,9 +1,11 @@
 "use client"
 
 import { database } from "@/public/database"
-import { useEffect, useState } from "react"
-import { get, useForm } from "react-hook-form"
+import { useEffect, useState, useRef } from "react"
+import { useForm } from "react-hook-form"
 import Image from "next/image"
+import { toPng } from "html-to-image"
+import download from "downloadjs"
 
 export default function Header() {
   const {
@@ -16,6 +18,15 @@ export default function Header() {
   const [generateModal, setGenerateModal] = useState(false)
   const [nameModal, setNameModal] = useState(false)
   const [name, setName] = useState("")
+
+  const divDownload = useRef(null)
+
+  const downloadImg = (e) => {
+    e.stopPropagation()
+    toPng(divDownload.current).then((dataUrl) => {
+      download(dataUrl, name + "-stack.png")
+    })
+  }
 
   const toggleName = () => {
     setNameModal(!nameModal)
@@ -100,10 +111,14 @@ export default function Header() {
 
       {generateModal && (
         <div
-          className="absolute top-0 left-0 z-30 w-screen h-screen bg-black/50 flex flex-col justify-center items-center generateBackground"
+          className="absolute top-0 left-0 z-30 w-screen h-screen bg-black/50 flex flex-col justify-center items-center"
           onClick={toggleGenerate}
         >
-          <div className="w-[500px] bg-black p-8 text-center rounded-2xl">
+          <div
+            ref={divDownload}
+            className="w-[500px] bg-black p-8 text-center rounded-2xl"
+            onClick={(e) => downloadImg(e)}
+          >
             <p className="text-white text-2xl">
               <strong className="text-primary">{name + " "}</strong>
               stack
